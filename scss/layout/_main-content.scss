@@ -1,0 +1,33 @@
+picture {
+    display: block;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+.content {
+    background-color: aqua;
+    padding: 1em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    a {
+        border-radius: .5em;
+        padding: .5em 1em;
+        background-color: var(--black);
+        color: var(--bk-color);
+    }
+}
+footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: .4em 1em;
+    img {
+        width: 15%;
+        aspect-ratio: 3/2;
+        object-fit: contain;
+    }
+}
