@@ -1,10 +1,9 @@
 .navbar {
     width: 100%;
     display: flex;
-    background-color: azure;
     ul {
         display: flex;
-        background-color:aqua;
+        background-color:var(--bk-color);
         height: 100vh;
         position: fixed;
         margin-top: 0;
@@ -13,12 +12,12 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: left;
-        gap: .2em;
+        gap: 1em;
         top: 0;
         right: 0;
         padding-top: 4em;
         transition: transform 0.5s ease-in-out;
-        
+
         li {
             list-style: none;
             margin-bottom: 1.2em;
@@ -30,18 +29,44 @@
         }
         a:hover {
             font-weight: bolder;
-            padding: 0.5em 1em;
-            border-bottom: 1px solid var(--bk-color-dark);
-            border-radius: 20px;
         }
-        .buy-crypto {
-            max-width: 15em;
-            padding: 1.2em 1em;
+        .sm-col {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            #register {
+                text-align: center;
+                width: 80%;
+                padding: .7em 2em;
+                border-radius: .8em;
+                border: 1px solid black !important;
+            }
         }
-        .buy-crypto:hover {
-            background-color: var(--fav-green-color);
-            color: var(--bk-color-light);
+    }
+    @media screen and (min-width: 768px) {
+        .menu-items {
+            flex-direction: row;
+            transform: translate(0);
+            width: 90%;
+            height: auto;
+            padding: 1.2em 0;
+            justify-content: left;
+            gap: 1.4em;
+            align-items: center;
+            .big-place-right {
+                position: absolute;
+                flex-direction: row;
+                right: 1.5em;
+            }
         }
+        li {
+            padding: 0;
+            margin-bottom: 0 !important;
+        }
+        .checkbox, .hamburger-lines {
+            display: none !important;
+        }
+        
     }
 }
 .container {
@@ -73,15 +98,15 @@
         display: block;
         height: 30px;
         width: 30px;
-        opacity: 2;
+        opacity: 0;
         cursor: pointer;
         z-index: 101;
     }
     .hamburger-lines {
         position: fixed;
         right: 2em;
-        height: 30px;
-        width: 30px;
+        height: 25px;
+        width: 25px;
         z-index: 100;
     }
 
@@ -89,18 +114,21 @@
     input[type="checkbox"]:checked ~ .menu-items {
         transform: translateX(0);
         padding: 5em 0;
-        gap: 2em;
         z-index: 20;
     }
-    input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
-        transform: rotate(45deg);
-        margin-top: .4em;
-
+    @media screen and (min-width: 768px) {
+        input[type="checkbox"]:checked ~ .menu-items {
+            padding: 1.2em !important;
+            margin-bottom: 0;
+        }
+    }
+    input[type="checkbox"]:checked ~ .hamburger-lines {
+        display: none;
+    }
     input[type="checkbox"]:checked ~ .logo{
         display: none;
     }
     input[type="checkbox"]:checked ~ img{
         display: none;
     }
-}
 }

@@ -1,6 +1,8 @@
 
+
 html {
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 *, *::after, *::before {
@@ -15,4 +17,10 @@ body {
     color: var(--bk-color);
     display: flex;
     flex-direction: column;
+    font-family: 'Epilogue', sans-serif;
+}
+@media screen and (min-width: 768px) {
+    body {
+        place-items: center;
+    }
 }
