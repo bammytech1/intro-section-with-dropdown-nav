@@ -21,7 +21,16 @@ h1{
 }
 @media screen and (min-width: 768px) {
     h1 {
-        font-size: 4.7rem;
+        margin-top: 0;
+        font-size: 3.5rem;
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    h1 {
+        margin-top: .5em;
+        font-size: 5.8rem;
         text-align: left;
     }
 }
@@ -37,15 +46,28 @@ p{
 
 @media screen and (min-width: 768px) {
     p {
+        text-align: left;
+    }
+}
+@media screen and (min-width: 1200px) {
+    p {
         font-size: 1.3rem;
         text-align: left;
     }
 }
 
-.content a {
-    text-align: center;
-    border-radius: .7em;
-    padding: 1.3em;
-    background-color: var(--black);
-    color: var(--bk-color);
+.content {
+    a {
+        text-align: center;
+        border-radius: .7em;
+        padding: 1.6em;
+        background-color: var(--black);
+        color: var(--bk-color);
+    }
+    a:hover, a:active {
+        background-color: var(--bk-color);
+        color: var(--black);
+        border: solid 1px;
+        border-color: var(--black);
+    }
 }

@@ -4,58 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="dist/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 </head>
 <body>
   <header style="width: 100%;">
-    <nav class="navbar">
-        <div class="container nav-container">
-                <div class="logo">
-                  <img src="images/logo.svg" alt="logo">
-                </div>
-                <input class="checkbox" type="checkbox" name="" id="" />
-                <img class="menu-hamburger hamburger-lines" src="images/icon-menu.svg">
-                <img class="close-hamburger hamburger-lines" src="images/icon-close-menu.svg">
-                <ul class="menu-items">
-                  <li>
-                    <div class="sec-center"> 	
-                      <input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
-                      <label class="for-dropdown" for="dropdown">Features<span class="rot-180"><img src="images/icon-arrow-down.svg"</span></label>
-                      <div class="section-dropdown"> 
-                        <a href="#">History</a>
-                        <a href="#">Our team</a>
-                        <a href="#">Blog</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="sec-center"> 	
-                      <input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
-                      <label class="for-dropdown" for="dropdown">Company<span class="rot-180"><img src="images/icon-arrow-down.svg"</span></label>
-                      <div class="section-dropdown"> 
-                        <a href="#">History</a>
-                        <a href="#">Our team</a>
-                        <a href="#">Blog</a>
-                      </div>
-                    </div>
-                    <!--<dl class="company-drop-down hiddenm">
-                      <li><a href="#">History</a></li>
-                      <li><a href="#">Our Team</a></li>
-                      <li><a href="#">Blog</a></li>
-                    </dl>-->
-                  </li>
-                  <li><a href="#">Careers</a></li>
-                  <li><a href="#">About</a></li>
-                  <span class=" sm-col big-place-right">
-                    <a id="login" href="#">Login</a>
-                    <a id="register" href="#">Register</a>
-                  </span>
-                </ul>
-                
-        </div>
+    <nav id="nav" role="navigation">
+      <div class="logo">
+        <img src="images/logo.svg" alt="logo">
+      </div>
+      <a href="#nav" title="Show navigation"><img class="menu-hamburger hamburger-lines"  src="images/icon-menu.svg"></a> 
+      <a href="#" title="Hide navigation"><img class="close-hamburger hamburger-lines"  src="images/icon-close-menu.svg"></a>
+        <ul class="clearfix">
+          <li class="arrow-up"><a href="">Features<span><img src="images/icon-arrow-down.svg"/></span></a>
+            <ul>
+              <li class="row-this"><span class=""><img src="images/icon-todo.svg"/></span><a href="#">Todo List</a></li>
+              <li class="row-this"><span class=""><img src="images/icon-calendar.svg"/></span><a href="#">Calender</a></li>
+              <li class="row-this"><span class=""><img src="images/icon-reminders.svg"/></span><a href="#">Reminders</a></li>
+              <li class="row-this"><span class=""><img src="images/icon-planning.svg"/></span><a href="#">Planning</a></li>
+            </ul>
+          </li>
+          <li class="arrow-up"><a href="">Company<span><img src="images/icon-arrow-down.svg"/></span></a>
+            <ul>
+              <li><a href="">History</a></li>
+              <li><a href="">Our Team</a></li>
+              <li><a href="">Blog</a></li>
+            </ul>
+          </li>
+          <li><a href="">Careers</a></li>
+          <li><a href="">About</a></li>
+          <span class=" sm-col big-place-right">
+            <a id="login" href="#">Login</a>
+            <a id="register" href="#">Register</a>
+          </span>
+        </ul>
     </nav>
   </header>
   <main class="main-content main-grid">
@@ -77,18 +62,21 @@
       <img src="images/client-meet.svg" alt="">
       <img src="images/client-maker.svg" alt="">
     </footer>
+
+        <script src="http://osvaldas.info/examples/main.js"></script>
+
+        <script src="http://osvaldas.info/examples/drop-down-navigation-touch-friendly-and-responsive/doubletaptogo.js"></script> 
+          
+        <script>
+          $( function()
+          {
+            $( '#nav li:has(ul)' ).doubleTapToGo();
+          });
+        </script>
   </main>
-
-  Make remote work
-
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more
-  
   <div style="display: none;" class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Gbenga Bayode</a>.
   </div>-->
 </body>
 </html>
