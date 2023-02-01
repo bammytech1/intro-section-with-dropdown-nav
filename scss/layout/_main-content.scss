@@ -5,6 +5,7 @@
 } */
 @media screen and (min-width: 768px) {
     .main-grid {
+        margin-top: 4em;
         width: 80%;
         display: grid;
         gap: 3em;
@@ -39,18 +40,19 @@ picture {
 }
 @media (min-width: 768px) {
     picture  {
-        width: 50%;
+        width: 100%;
+        height: auto;
         order: 1;
         border-radius: 0  10px 10px 0;
     }
 }
 .content {
-    padding: 1em .5em;
+    padding: 1em auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2em;
+    gap: 1.5em;
 
 }
 @media screen and (min-width: 768px) {
@@ -60,10 +62,12 @@ picture {
 }
 
 footer {
+    margin-top: 2em;
     display: flex;
+    align-items: center;
     width: 100%;
     justify-content: space-between;
-    padding: .4em 1em;
+    padding: .4em 1.5em;
     img {
         width: 20%;
         aspect-ratio: 3/2;

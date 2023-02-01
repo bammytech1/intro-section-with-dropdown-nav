@@ -1,4 +1,5 @@
 .navbar {
+    margin-top: 1em;
     width: 100%;
     display: flex;
     ul {
@@ -6,13 +7,12 @@
         background-color:var(--bk-color);
         height: 100vh;
         position: fixed;
-        margin-top: 0;
         width: 60%;
         transform: translate(150%);
         flex-direction: column;
         justify-content: flex-start;
         align-items: left;
-        gap: 1em;
+        gap: 1.5em;
         top: 0;
         right: 0;
         padding-top: 4em;
@@ -20,24 +20,25 @@
 
         li {
             list-style: none;
-            margin-bottom: 1.2em;
+    
         }
     
-        a {
-            padding: 0.7em;
+        a, label {
+            margin-left: 1em;
             color: var(--black);
         }
-        a:hover {
+        a:hover, label:hover {
             font-weight: bolder;
         }
         .sm-col {
             align-items: center;
             display: flex;
             flex-direction: column;
+            gap: 1em;
             #register {
                 text-align: center;
                 width: 80%;
-                padding: .7em 2em;
+                padding: .7em 1.2em;
                 border-radius: .8em;
                 border: 1px solid black !important;
             }
@@ -45,13 +46,16 @@
     }
     @media screen and (min-width: 768px) {
         .menu-items {
+            margin-top: 0;
+            background-color: transparent;
             flex-direction: row;
             transform: translate(0);
             width: 90%;
             height: auto;
             padding: 1.2em 0;
             justify-content: left;
-            gap: 1.4em;
+            top: 1em;
+            gap: 1em;
             align-items: center;
             .big-place-right {
                 position: absolute;
@@ -78,6 +82,7 @@
     .logo {
         display: block;
         position: absolute;
+        top: 2em;
         img {
             object-fit:contain;
 
@@ -100,7 +105,7 @@
         width: 30px;
         opacity: 0;
         cursor: pointer;
-        z-index: 101;
+        z-index: 1000;
     }
     .hamburger-lines {
         position: fixed;
@@ -109,8 +114,19 @@
         width: 25px;
         z-index: 100;
     }
+    .close-hamburger {
+        visibility: hidden;
+    }
 
     
+    input[type="checkbox"]:checked ~ .menu-hamburger {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked ~ .close-hamburger{
+        visibility: visible;
+    }
+
     input[type="checkbox"]:checked ~ .menu-items {
         transform: translateX(0);
         padding: 5em 0;
@@ -122,13 +138,89 @@
             margin-bottom: 0;
         }
     }
-    input[type="checkbox"]:checked ~ .hamburger-lines {
-        display: none;
+}
+
+
+
+
+
+
+
+/* Please ❤ this if you like it! */
+
+
+
+.sec-center {
+    position: relative;
+    max-width: 100%;
+    z-index: 200;
+}
+[class="dropdown"]:checked,
+[class="dropdown"]:not(:checked){
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
+.dropdown:checked + label,
+.dropdown:not(:checked) + label{
+    position: relative;
+    transition: all 200ms linear;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    color: #080804;
+    box-shadow: 0 12px 35px 0 rgba(255,235,167,.15);
+}
+
+.section-dropdown {
+    position: absolute;
+    padding: 1em .8em;
+    background-color: rgb(255, 255, 255);
+    top: 1.5em;
+    left: 0;
+    gap: 1em;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 14px 35px 0 rgba(9,9,12,0.4);
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 200ms linear;
+
+    a {
+        font-size: smaller;
+        transition: all 200ms linear;
+        width: 100%;
     }
-    input[type="checkbox"]:checked ~ .logo{
-        display: none;
-    }
-    input[type="checkbox"]:checked ~ img{
-        display: none;
-    }
+    
+}
+
+.dropdown:checked ~ .section-dropdown{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.dropdown:checked ~ label .rot-180 {
+    rotate: 180deg;
 }

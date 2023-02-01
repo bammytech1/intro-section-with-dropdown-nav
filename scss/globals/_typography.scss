@@ -15,12 +15,13 @@ h1{
     text-align: center;
     font-size: 2.4rem;
     font-weight: 700;
-    width: 100%;
+    width: 90%;
+    margin-top: 1em;
 
 }
 @media screen and (min-width: 768px) {
     h1 {
-        font-size: 5rem;
+        font-size: 4.7rem;
         text-align: left;
     }
 }
@@ -28,7 +29,9 @@ h1{
 p{
     color: var(--mid-gray);
     text-align: center;
+    width: 90%;
     font-size: 1.1rem;
+    line-height: 1.5em;
     font-weight: 500;
 }
 
@@ -40,11 +43,9 @@ p{
 }
 
 .content a {
-    width: 200px;
     text-align: center;
     border-radius: .7em;
-    padding: .9em 1.5em;
+    padding: 1.3em;
     background-color: var(--black);
     color: var(--bk-color);
-    margin-top: 2.5em;
 }
